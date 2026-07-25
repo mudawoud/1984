@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MODERN EYE | 1984 in a World of Algorithms, Propaganda, and Power</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #f7f5ed;
+            --bg-card: #ffffff;
+            --bg-subtle: #efece4;
+            --text-main: #1c1917;
+            --text-muted: #57534e;
+            --accent-red: #991b1b;
+            --accent-red-hover: #7f1d1d;
+            --border-color: #d6d3d1;
+            --border-dark: #292524;
+            --font-serif: 'Newsreader', Georgia, serif;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-title: 'Cinzel', Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-paper);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-title);
+            color: var(--text-main);
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1.3rem;
+        }
+
+        /* Integrated Inline Hyperlinks (Subtle & Magazine-Style) */
+        a.inline-link {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1.5px dotted var(--accent-red);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            padding-bottom: 1px;
+        }
+
+        a.inline-link:hover {
+            color: var(--accent-red);
+            border-bottom-style: solid;
+            background-color: rgba(153, 27, 27, 0.05);
+        }
+
+        /* Container Layouts */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Masthead / Header */
+        header.masthead {
+            max-width: 1050px;
+            margin: 2.5rem auto 1.5rem;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .issue-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--border-dark);
+            border-bottom: 2px solid var(--border-dark);
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .masthead-title {
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        .masthead-subtitle {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+            color: var(--text-muted);
+            max-width: 850px;
+            margin: 0 auto 2rem;
+            line-height: 1.4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--border-dark);
+            color: #ffffff;
+            padding: 3.5rem 2.5rem;
+            border-radius: 2px;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .hero-question {
+            font-family: var(--font-serif);
+            font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+            font-weight: 400;
+            line-height: 1.35;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            color: #f5f5f4;
+        }
+
+        .hero-lead {
+            font-size: 1.05rem;
+            max-width: 780px;
+            margin: 0 auto;
+            color: #d6d3d1;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Editor's Note / Introduction */
+        .editor-intro {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-red);
+            padding: 2rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .editor-intro h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .editor-intro p {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: #292524;
+            margin-bottom: 0;
+        }
+
+        /* Article Structure */
+        .article {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .article-header {
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .article-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .article-content {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: #1c1917;
+        }
+
+        .article-content h3 {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 2rem 0 0.75rem;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        /* Quotation Boxes */
+        .quote-box {
+            background-color: #f5f4ef;
+            border-left: 4px solid var(--border-dark);
+            padding: 1.5rem 1.75rem;
+            margin: 2rem 0;
+            font-family: var(--font-serif);
+        }
+
+        .quote-box blockquote {
+            font-size: 1.18rem;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            color: #0c0a09;
+            line-height: 1.6;
+        }
+
+        .quote-meta {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .quote-context {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Magazine Callout Boxes */
+        .magazine-callout {
+            background-color: #fdfbf7;
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--accent-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .magazine-callout-title {
+            font-family: var(--font-title);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Video Card (Clickable YouTube Card) */
+        .youtube-card {
+            display: flex;
+            flex-direction: row;
+            background-color: var(--border-dark);
+            color: #ffffff;
+            border: 1px solid var(--border-dark);
+            border-radius: 2px;
+            margin: 2.25rem 0;
+            overflow: hidden;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .youtube-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .youtube-thumb-wrapper {
+            position: relative;
+            width: 40%;
+            min-width: 220px;
+            background-color: #000;
+        }
+
+        .youtube-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .youtube-card:hover .youtube-thumb {
+            opacity: 1;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(153, 27, 27, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .play-button-overlay::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 3px;
+        }
+
+        .youtube-details {
+            padding: 1.5rem;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: var(--font-sans);
+        }
+
+        .youtube-channel {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #a8a29e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .youtube-title {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+
+        .youtube-desc {
+            font-size: 0.85rem;
+            color: #d6d3d1;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            align-self: flex-start;
+            background-color: var(--accent-red);
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.4rem 0.9rem;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 650px) {
+            .youtube-card {
+                flex-direction: column;
+            }
+            .youtube-thumb-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+            .youtube-details {
+                width: 100%;
+                padding: 1.25rem;
+            }
+        }
+
+        /* Infographics Styling */
+        .infographic-card {
+            background: #ffffff;
+            border: 2px solid var(--border-dark);
+            padding: 2.25rem 2rem;
+            margin: 3.5rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .infographic-title {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .flow-step {
+            width: 100%;
+            background-color: var(--bg-paper);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .flow-step.highlight {
+            background-color: var(--accent-red);
+            color: #ffffff;
+            border-color: var(--accent-red-hover);
+        }
+
+        .flow-arrow {
+            font-size: 1.25rem;
+            color: var(--accent-red);
+            font-weight: 900;
+        }
+
+        /* Comparison Table */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table.comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background-color: var(--bg-card);
+        }
+
+        table.comparison-table th, table.comparison-table td {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        table.comparison-table th {
+            background-color: var(--border-dark);
+            color: #ffffff;
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+        }
+
+        table.comparison-table tr:nth-child(even) {
+            background-color: #fcfbfa;
+        }
+
+        /* Interview Section */
+        .interview-wrapper {
+            background-color: #f4f1ea;
+            border: 1px solid var(--border-dark);
+            padding: 2.5rem;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .interview-badge {
+            position: absolute;
+            top: -14px;
+            right: 20px;
+            background-color: var(--accent-red);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dialogue-q {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-top: 1.5rem;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        .dialogue-a {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: #1c1917;
+            margin-bottom: 1.25rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid var(--border-color);
+            line-height: 1.75;
+        }
+
+        /* Sources Section */
+        .sources-section {
+            background-color: #efece4;
+            padding: 2.25rem;
+            border: 1px solid var(--border-color);
+            margin-top: 4rem;
+            font-size: 0.92rem;
+        }
+
+        .sources-list {
+            padding-left: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .sources-list li {
+            margin-bottom: 1rem;
+        }
+
+        .sources-list a {
+            color: var(--accent-red);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem;
+            border-top: 2px solid var(--border-dark);
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .article {
+                padding: 1.75rem 1.25rem;
+            }
+            .interview-wrapper {
+                padding: 1.5rem;
+            }
+            .infographic-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Enhanced Scroll Progress Bar Styles */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(0, 0, 0, 0.05);
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-red);
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 8px rgba(153, 27, 27, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar HTML -->
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Magazine Masthead -->
+    <header class="masthead">
+        <div class="issue-meta">
+            <span>English Final Project</span>
+            <span>Focus: George Orwell's 1984</span>
+            <span>Mohammed Dawoud</span>
+        </div>
+        <h1 class="masthead-title">THE MODERN EYE</h1>
+        <p class="masthead-subtitle">1984 in a World of Algorithms, Propaganda, and Power</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="hero-tag">Central Question</span>
+            <h2 class="hero-question">"If 1984 showed us how a government can control information, what happens when we can no longer tell what information is true?"</h2>
+            <p class="hero-lead">This project looks at how the control of information in 1984 can be connected to the world today. We will look at social media algorithms, companies collecting our personal data, and the huge amount of information we see online every day.</p>
+        </section>
+
+        <!-- Editor's Introduction -->
+        <section class="editor-intro">
+            <h3>Editor's Note: Orwell's Warnings in the Digital Age</h3>
+            <p>When we read <em>George Orwell's 1984</em>, we can see that the story is still important. The book is about a government that controls people using fear, violence, and technology. But it also shows how controlling information can change what people think and believe. In this magazine, we will look at some of the ideas from 1984 and how we can see them in today's world. We will talk about social media, online privacy, propaganda, and how people can be influenced by the information they see every day.</p>
+        </section>
+
+        <!-- ARTICLE 1 -->
+        <article class="article" id="article1">
+            <div class="article-header">
+                <span class="article-category">Article 1: Political Power & Control of Information</span>
+                <h2 class="article-title">WHO CONTROLS THE TRUTH?</h2>
+                <p class="article-subtitle">Propaganda, Politics, and Controlling What People Believe</p>
+            </div>
+
+            <div class="article-content">
+                <p>In <em>George Orwell’s 1984</em>, the government controls people by controlling information and history. Winston Smith works at the Ministry of Truth. His job is to change old newspaper articles so they match what the Party says now. For example, if the Party changes who it is fighting in a war or changes information about the economy, Winston must change the old records too. This means that people cannot know what really happened in the past. The main idea of Ingsoc (English Socialism) is simple: the truth is whatever the Party says is true.</p>
+
+                <!-- Quote 1 -->
+                <div class="quote-box">
+                    <blockquote>"'Who controls the past,' ran the Party slogan, 'controls the future: who controls the present controls the past.'"</blockquote>
+                    <div class="quote-meta">George Orwell, <em>1984</em> — Part 1, Chapter 3 (Page 43)</div>
+                    <div class="quote-context"><strong>Context & Analysis:</strong> Winston realizes that the Party has the power to change the past. If the Party changes old records and says that something never happened, people will believe that it never happened. This means the Party can control what people think is true. By controlling information and history, the Party also controls people.</div>
+                </div>
+
+                <p>In today's democratic countries, there is no single government office that can change old books and records overnight like in 1984. However, politicians and media companies can still influence what people think. They can do this by showing some information more than other information, using emotional language, repeating the same ideas, leaving out important details, or removing some content online.</p>
+
+                <p>By repeatedly highlighting specific events while omitting crucial context, political entities and media organizations construct distinct narrative environments. Investigation into modern digital control by <a href="https://www.theguardian.com/technology/article/2024/may/29/meta-censorship-palestine" target="_blank" rel="noopener noreferrer" class="inline-link">The Guardian on corporate platform moderation</a> reveals how automated systems can quietly suppress political expression, shaping what millions of users see or remain unaware of in real time. This is further corroborated by extensive research from Human Rights Watch documenting <a href="https://www.hrw.org/news/2023/12/20/meta-systemic-censorship-palestine-content" target="_blank" rel="noopener noreferrer" class="inline-link">Meta's systemic censorship of Palestinian content</a>.</p>
+
+                <!-- Quote 2 -->
+                <div class="quote-box">
+                    <blockquote>"Day by day and almost minute by minute the past was brought up to date. In this way every prediction made by the Party could be shown by documentary evidence to have been correct, nor was any item of news, or any expression of opinion, which conflicted with the needs of the moment, ever allowed to remain on record. All history was a palimpsest, scraped clean and reinscribed exactly as often as was necessary."</blockquote>
+                    <div class="quote-meta">George Orwell, <em>1984</em> — Part 1, Chapter 4 (Page 51)</div>
+                    <div class="quote-context"><strong>Context & Analysis:</strong> Orwell details the mechanics of the Records Department. Comparing history to a palimpsest emphasizes that narrative consistency is prioritized over objective historical record.</div>
+                </div>
+
+                <h3>Media Representation and Framing Double Standards</h3>
+                <p>A significant area of narrative control in journalism involves double standards in media framing—particularly regarding ethnic and religious minorities. Reports documented by <a href="https://apnews.com/article/muslims-arab-americans-television-representation-stereotypes-81d15bc3788c12ea4d6de01a33c8aa08" target="_blank" rel="noopener noreferrer" class="inline-link">AP News on TV representation and stereotypes</a> show how persistent framing influences public opinion long before individuals have direct personal encounters with a demographic group.</p>
+
+                <p>When acts of violent extremism are committed by Western individuals, news reports frequently emphasize individual mental health, personal isolation, or individual dysfunction, describing the perpetrator as an isolated actor. Conversely, when violent acts involve individuals of Arab or Muslim background, media analysis demonstrates a statistical pattern where individual actions are linked to broader culture or religion, reinforcing broad generalizations.</p>
+
+                <div class="magazine-callout">
+                    <div class="magazine-callout-title">In Context: The Historical Legacy of Media Stereotyping</div>
+                    <p>In his landmark research documented in <a href="https://books.google.ca/books?id=MaMDAQAAQBAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false" target="_blank" rel="noopener noreferrer" class="inline-link">Reel Bad Arabs: How Hollywood Vilifies a People</a>, media scholar Jack Shaheen systematically analyzed decades of news and cinema, proving that repetitive negative representation builds a public consensus that justifies geopolitical policies and diminishes empathy for affected populations.</p>
+                </div>
+
+                <p>In <em>1984</em>, the Party creates a permanent external threat—Goldstein and rival super-states—to maintain public fear and conformity. Today, selective media framing and digital moderation achieve a comparable result: while the state does not force compliance, repeated narrative patterns dictate which groups are granted individual nuance and which are judged collectively.</p>
+            </div>
+        </article>
+
+        <!-- ARTICLE 2 -->
+        <article class="article" id="article2">
+            <div class="article-header">
+                <span class="article-category">Article 2: Technology & Surveillance</span>
+                <h2 class="article-title">BIG BROTHER IS WATCHING</h2>
+                <p class="article-subtitle">Surveillance, Privacy, and the Digital World</p>
+            </div>
+
+            <div class="article-content">
+                <p>The defining symbol of Orwell’s Oceania is Big Brother—the enormous face watching from public posters, warning citizens that every movement is monitored. In <em>1984</em>, surveillance is enforced through the Thought Police and the telescreen. The telescreen is a two-way device installed in homes and workplaces, capable of broadcasting state propaganda while simultaneously transmitting video and audio back to state observers.</p>
+
+                <!-- Quote 3 -->
+                <div class="quote-box">
+                    <blockquote>"There was of course no way of knowing whether you were being watched at any given moment. How often, or on what system, the Thought Police plugged in on any individual wire was guesswork. It was even conceivable that they watched everybody all the time. But at any rate they could plug in your wire whenever they wanted to. You had to live—did live, from habit that became instinct—in the assumption that every sound you made was overheard, and, except in darkness, every movement scrutinized."</blockquote>
+                    <div class="quote-meta">George Orwell, <em>1984</em> — Part 1, Chapter 1 (Page 4)</div>
+                    <div class="quote-context"><strong>Context & Analysis:</strong> Explains the psychological impact of unpredictable surveillance. Because Winston cannot know when an observer is watching, he must internalize state discipline and strictly control his expressions.</div>
+                </div>
+
+                <p>Comparing Orwell's dystopian vision with contemporary technology raises a vital question: <strong>Are modern citizens giving away their privacy voluntarily?</strong></p>
+
+                <p>The key distinction between Oceanian surveillance and modern technology lies in the mechanism of adoption. In <em>1984</em>, surveillance is involuntary, authoritarian, and state-mandated. Citizens cannot switch off their telescreens without risking execution or imprisonment.</p>
+
+                <!-- Quote 4 -->
+                <div class="quote-box">
+                    <blockquote>"The telescreen received and transmitted simultaneously. Any sound that Winston made, above the level of a very low whisper, would be picked up by it, moreover, so long as he remained within the field of vision which the metal plaque commanded, he could be seen as well as heard."</blockquote>
+                    <div class="quote-meta">George Orwell, <em>1984</em> — Part 1, Chapter 1 (Page 4)</div>
+                    <div class="quote-context"><strong>Context & Analysis:</strong> Describes the physical hardware of Oceanian monitoring, emphasizing the total elimination of domestic private space.</div>
+                </div>
+
+                <p>In contrast, modern surveillance is decentralized, commercialized, and largely voluntary. Citizens voluntarily carry sophisticated tracking hardware in their pockets. Through GPS location tracking, web browsing analytics, app permissions, facial recognition, and smart home devices, vast quantities of behavioral data are gathered continuously by commercial entities and data brokers, as highlighted in <a href="https://www.eff.org/wp/government-use-commercial-data-brokers" target="_blank" rel="noopener noreferrer" class="inline-link">research by the Electronic Frontier Foundation</a>.</p>
+
+                <!-- CLICKABLE YOUTUBE VIDEO CARD 1 -->
+                <a href="https://www.youtube.com/watch?v=ZX5nTV8lwr0" target="_blank" rel="noopener noreferrer" class="youtube-card">
+                    <div class="youtube-thumb-wrapper">
+                        <img src="https://img.youtube.com/vi/ZX5nTV8lwr0/hqdefault.jpg" alt="TED Talk Thumbnail" class="youtube-thumb">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="youtube-details">
+                        <span class="youtube-channel">TED Talks</span>
+                        <h4 class="youtube-title">How Surveillance Tech Erodes Your Privacy</h4>
+                        <p class="youtube-desc">AI ethicist Jen Golbeck examines how modern corporate data harvesting creates systems of behavioral tracking for profit and influence.</p>
+                        <span class="youtube-btn">Watch on YouTube</span>
+                    </div>
+                </a>
+
+                <p>Regulatory enforcement actions, such as the <a href="https://www.ftc.gov/news-events/news/press-releases/2024/01/ftc-order-prohibits-data-broker-selling-sensitive-location-data" target="_blank" rel="noopener noreferrer" class="inline-link">FTC's landmark order prohibiting data brokers from selling sensitive location data</a>, highlight how sensitive personal movements are monetized and traded without explicit consumer consent. While corporate data collection aims primarily at targeted advertising, government agencies routinely access this private data infrastructure through legal requests or commercial purchases.</p>
+
+                <p>While modern digital surveillance differs from the forced telescreen of <em>1984</em>, Orwell's fundamental observation remains valid: constant observation, whether enforced by a state or accepted for digital convenience, subtly alters human behavior toward self-censorship and conformity.</p>
+            </div>
+        </article>
+
+        <!-- ARTICLE 3 -->
+        <article class="article" id="article3">
+            <div class="article-header">
+                <span class="article-category">Article 3: Viral Culture & Misinformation</span>
+                <h2 class="article-title">WHEN TRUTH BECOMES ENTERTAINMENT</h2>
+                <p class="article-subtitle">Memes, AI Slop, and the Normalization of War Crimes and Atrocities</p>
+            </div>
+
+            <div class="article-content">
+                <p>In <em>1984</em>, the Party maintains political control over the working-class majority (the "proles") through systematic distraction. Rather than subjecting the proles to strict ideological surveillance, the Ministry of Truth provides them with automated fiction, sensational tabloids, violent films, and state-run lotteries. By filling their attention with low-grade entertainment, the state ensures that critical political thought rarely emerges.</p>
+
+                <!-- Quote 5 -->
+                <div class="quote-box">
+                    <blockquote>"Heavy physical work, the care of home and children, petty quarrels with neighbours, films, football, beer, and above all, gambling, filled up the horizon of their minds. To keep them in control was not difficult."</blockquote>
+                    <div class="quote-meta">George Orwell, <em>1984</em> — Part 1, Chapter 7 (Pages 90-91)</div>
+                    <div class="quote-context"><strong>Context & Analysis:</strong> Winston observes how the Party keeps 85% of the population passive. Superficial entertainment prevents citizens from questioning their living conditions or demanding political accountability.</div>
+                </div>
+
+                <p>Within contemporary digital environments, a far more insidious dynamic operates through algorithmic engagement, viral memes, and generative AI content. Rather than merely distracting the public, modern social media culture increasingly transforms state violence, military aggression, fascist rhetoric, and institutional corruption into ironic jokes and viral entertainment.</p>
+
+                <h3>Leaflet Propaganda of the Digital Age</h3>
+                <p>Scholarly research demonstrates that internet memes are not harmless jokes; they function as <a href="https://www.frontiersin.org/journals/communication/articles/10.3389/fcomm.2020.547065/full" target="_blank" rel="noopener noreferrer" class="inline-link">the leaflet propaganda of the digital age</a>. By packaging complex political conflicts into bite-sized visual formats, memes simplify atrocities and create psychological detachment. In modern geopolitical conflicts—ranging from <a href="https://www.degruyterbrill.com/document/doi/10.1515/omgc-2023-0050/html" target="_blank" rel="noopener noreferrer" class="inline-link">multimodal meme warfare in Ukraine</a> to civil tensions in <a href="https://ijoc.org/index.php/ijoc/article/view/20910" target="_blank" rel="noopener noreferrer" class="inline-link">Northern Ireland's Belfast riots</a> and <a href="https://www.tandfonline.com/doi/full/10.1080/21647259.2026.2670253#d1e398" target="_blank" rel="noopener noreferrer" class="inline-link">post-war divisions in Bosnia</a>—memes are actively deployed to weaponize humor, mock suffering, and dehumanize political adversaries.</p>
+
+                <p>As computational studies on <a href="https://www.sciencedirect.com/science/article/pii/S2468696425000187" target="_blank" rel="noopener noreferrer" class="inline-link">toxic meme detection</a> and research on <a href="https://arxiv.org/abs/2109.08013" target="_blank" rel="noopener noreferrer" class="inline-link">propaganda techniques in memes</a> demonstrate, visual humor acts as a Trojan horse. Humor bypasses critical reasoning, allowing hate speech, war crimes, and state propaganda to be consumed as lighthearted media.</p>
+
+                <!-- Quote 6 -->
+                <div class="quote-box">
+                    <blockquote>"The Party told you to reject the evidence of your eyes and ears. It was their final, most essential command."</blockquote>
+                    <div class="quote-meta">George Orwell, <em>1984</em> — Part 1, Chapter 7 (Page 103)</div>
+                    <div class="quote-context"><strong>Context & Analysis:</strong> Winston reflects on the psychological pressure of state narrative control, noting that the ultimate objective is making citizens doubt objective reality and common sense.</div>
+                </div>
+
+                <h3>Fascist Acts, Extremist AI, and Normalizing Atrocity</h3>
+                <p>The flood of AI-generated media ("AI slop") has drastically lowered the cost of generating high-volume radical propaganda. Investigative reporting shows that <a href="https://www.wired.com/story/neo-nazis-are-all-in-on-ai" target="_blank" rel="noopener noreferrer" class="inline-link">neo-Nazi groups are heavily utilizing generative AI</a> to produce radicalizing content, weapon blueprints, and extremist material at unprecedented scales. Furthermore, theoretical frameworks on <a href="https://sciety.org/articles/activity/10.31235/osf.io/w6mb7_v1" target="_blank" rel="noopener noreferrer" class="inline-link">AI memes as sociotechnical narratives</a> show how synthetic media reshapes societal norms by making extreme political positions appear ubiquitous and mundane.</p>
+
+                <p>When war crimes, military bombardments, and fascist political acts are endlessly memed or rendered in cartoonish AI formats, public reaction undergoes a profound shift. Brutal acts that ought to trigger widespread moral outrage and legal accountability are instead processed as recurring internet punchlines. Over time, the audience becomes desensitized, accepting atrocities as ordinary, inevitable background noise of the digital world.</p>
+
+                <!-- CLICKABLE YOUTUBE VIDEO CARD 2 -->
+                <a href="https://www.youtube.com/watch?v=_smXL6GW4C0" target="_blank" rel="noopener noreferrer" class="youtube-card">
+                    <div class="youtube-thumb-wrapper">
+                        <img src="https://img.youtube.com/vi/_smXL6GW4C0/hqdefault.jpg" alt="The Kavernacle Video Thumbnail" class="youtube-thumb">
+                        <div class="play-button-overlay"></div>
+                    </div>
+                    <div class="youtube-details">
+                        <span class="youtube-channel">The Kavernacle</span>
+                        <h4 class="youtube-title">The Rise of Epstein Memes is Insane (this is gross)</h4>
+                        <p class="youtube-desc">A critical analysis of how meme culture and AI media slop whitewash severe crimes, turn human trafficking into internet humor, and erode public moral outrage.</p>
+                        <span class="youtube-btn">Watch on YouTube</span>
+                    </div>
+                </a>
+
+                <h3>Case Study: How Memes Whitewash Elite Crimes</h3>
+                <p>A striking example of this normalization process involves the public reaction to high-profile criminal scandals, such as the sex trafficking case of Jeffrey Epstein. As analyzed in cultural commentary on <a href="https://www.youtube.com/watch?v=_smXL6GW4C0" target="_blank" rel="noopener noreferrer" class="inline-link">how Epstein memes normalize systemic crimes</a>, the release of court files and testimony was met not with sustained outrage, but with a flood of AI-generated videos showing Epstein dancing or participating in viral TikTok trends.</p>
+
+                <p>By transforming a convicted sex offender and his powerful accomplices into a viral meme persona, online culture erodes the gravity of human trafficking. When serious criminal cases and state-sanctioned abuses face either <a href="https://www.hrw.org/report/2023/12/21/metas-broken-promises/systemic-censorship-palestine-content-instagram-and" target="_blank" rel="noopener noreferrer" class="inline-link">algorithmic censorship by social platforms</a> or satirical memeification, the outcome is identical: public attention is diverted from demanding justice, and systemic crimes are accepted as ordinary occurrences.</p>
+
+                <p>This dynamic highlights a modern reality distinct from <em>1984</em>. In Orwell's novel, the state erases truth by physically destroying documents. Today, truth is obscured by being drowned in a sea of AI slop, viral memes, and ironic detachment. When fascist acts and war crimes become mere content, society loses its capacity for collective outrage.</p>
+            </div>
+        </article>
+
+        <!-- INFOGRAPHICS SECTION -->
+        <section class="infographic-card">
+            <h2 class="infographic-title">Visual Analysis: Information and Control</h2>
+
+            <h3 style="text-align: center; font-size: 1.05rem; margin-bottom: 1.5rem; font-family: var(--font-sans); color: var(--text-muted); font-weight: 700;">FIG 1. HOW INFORMATION CAN SHAPE WHAT PEOPLE THINK</h3>
+            <div class="flowchart">
+                <div class="flow-step highlight">POWERFUL GROUPS (Governments, Companies, Media, and Algorithms)</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">CONTROL OR INFLUENCE THE INFORMATION PEOPLE SEE</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">CHANGES HOW PEOPLE SEE THE WORLD</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">AFFECTS WHAT PEOPLE BELIEVE AND HOW THEY ACT</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step highlight">CAN LEAD PEOPLE TO FOLLOW OR ACCEPT CERTAIN IDEAS</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 style="text-align: center; font-size: 1.05rem; margin-bottom: 1.5rem; font-family: var(--font-sans); color: var(--text-muted); font-weight: 700;">FIG 2. 1984 vs. MODERN DIGITAL WORLD</h3>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>George Orwell's 1984</th>
+                            <th>Today's Digital World</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Surveillance Mechanism</strong></td>
+                            <td>Telescreens and the Thought Police watch people without their choice.</td>
+                            <td>Smartphones, location tracking, and companies collecting personal data.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Information Control</strong></td>
+                            <td>The Party controls information and changes old records.</td>
+                            <td>Algorithms decide what people see, while social media companies can remove or limit content.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Public Distraction</strong></td>
+                            <td>Lotteries, books, and violent movies are used to keep people distracted.</td>
+                            <td>Memes, short videos, social media trends, and online drama keep people's attention.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Targeted Population</strong></td>
+                            <td>Party members are directly controlled, while the proles are mostly left alone.</td>
+                            <td>Social media feeds are different for each person based on their interests and online activity.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FICTIONAL INTERVIEW SECTION -->
+        <section class="interview-wrapper">
+            <span class="interview-badge">Fictional Feature</span>
+            <h2 style="font-size: 1.7rem; margin-bottom: 0.4rem;">A CONVERSATION ABOUT 1984 TODAY</h2>
+            <p style="font-family: var(--font-serif); font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem;">A fictional interview with Winston Smith about what he might think of today's digital world based on his experiences in 1984.</p>
+
+            <div class="dialogue-q">Interviewer: Winston, when you look at our world today, do you think people are free?</div>
+            <div class="dialogue-a"><strong>Winston Smith:</strong> "You have much more physical freedom than we did. You are not forced to wear the same clothes or join the Two Minutes Hate. But I once wrote that freedom means being able to say that two plus two makes four. If screens and social media are always affecting what you think and believe, then people may still have trouble thinking for themselves."</div>
+
+            <div class="dialogue-q">Interviewer: What would surprise you the most about smartphones and the internet?</div>
+            <div class="dialogue-a"><strong>Winston Smith:</strong> "In Oceania, we were afraid of the telescreen because it was always watching us and we could not turn it off. What would surprise me about your world is that people buy their own devices and carry them everywhere. They also share a lot of personal information, such as their location, conversations, and interests."</div>
+
+            <div class="dialogue-q">Interviewer: What would you think about social media algorithms?</div>
+            <div class="dialogue-a"><strong>Winston Smith:</strong> "At the Ministry of Truth, we had to change information by hand to make people believe what the Party wanted. Your world does this in a different way. Algorithms can learn what makes people angry, scared, or excited and then show them more of the same content. If people are always distracted, it may be easier to control them without using violence."</div>
+
+            <div class="dialogue-q">Interviewer: Does having access to so much information mean that people know the truth?</div>
+            <div class="dialogue-a"><strong>Winston Smith:</strong> "No. In Oceania, the problem was that people did not have access to the truth. In your world, there is so much information that it can be hard to know what is true. There are rumors, false information, and many different opinions. When everything becomes content, people have to work harder to find the truth."</div>
+        </section>
+
+        <!-- EDITORIAL SECTION -->
+        <article class="article" id="editorial" style="background-color: #fdfdfc;">
+            <div class="article-header">
+                <span class="article-category">Student Editorial</span>
+                <h2 class="article-title">WHAT WOULD WINSTON THINK OF US?</h2>
+                <p class="article-subtitle">Reflections on Truth, Personal Background, and Orwell's Relevance</p>
+            </div>
+
+            <div class="article-content">
+                <p>When I first read <em>1984</em>, the world in the book felt very far from real life. 
+                    It was a scary place with gray buildings, strict rules, and a government that controlled everything. 
+                    But when I compare the book to the world today, I see that Orwell was not only warning us about dictators. 
+                    He was also showing us how easily people can be influenced when information is controlled or changed.</p>
+
+                <p>My background from Palestine, has also affected how I think about these topics. 
+                    Living through conflict can show you how quickly rumors and false information can spread. 
+                    During war, different sides can tell very different stories, and sometimes it can be hard to know what is really happening. 
+                    The experiences of normal people can also be forgotten or hidden by political messages and media coverage.</p>
+
+                <p>This is one reason why I think 1984 is still important today. In the book, the government controls information to control what people believe is real. 
+                    Today, we have more access to information than ever before, but that does not always mean we understand what is really happening. 
+                     information can spread very quickly, and serious events can become simple viral posts or memes. 
+                     Because of this, we need to take our time, check information, and think carefully about what we see online.</p>
+
+                <p>Winston's struggle in <em>1984</em> was about trying to hold on to the truth in a world where the government wanted him to believe its version of reality. 
+                    Our world is different from Oceania, but we still have a responsibility to think for ourselves. 
+                    We should question the information we see, avoid believing everything that is repeated online, and try to find reliable facts in a world full of information.</p>
+            </div>
+        </article>
+
+        <!-- FINAL REFLECTION -->
+        <section style="background-color: var(--border-dark); color: #ffffff; padding: 2.5rem; border-radius: 2px; text-align: center;">
+            <h2 style="color: #ffffff; margin-bottom: 1rem;">FINAL REFLECTION: LESSONS FROM ORWELL TODAY</h2>
+            <p style="max-width: 850px; margin: 0 auto; color: #d6d3d1; font-family: var(--font-serif); font-size: 1.12rem; line-height: 1.8;">
+                Orwell's 1984 shows us that controlling information can give people a lot of power. Today, we need to be careful about the information we see online. We should question what we see in the media, think about how our personal data is used, and not let serious problems become just another thing to watch or talk about on the internet.
+            </p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>THE MODERN EYE</strong> — A Digital Magazine Project on <em>George Orwell's 1984</em></p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">English Studies 12 | Mrs. Demmock</p>
+    </footer>
+
+    <!-- Scroll Progress Bar JavaScript -->
+    <script>
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+      });
+    </script>
+
+</body>
+</html>
